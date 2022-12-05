@@ -28,6 +28,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins":[
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "This app accesses your camera to allow you capture brilliant images"
+        }
+      ]
+    ]
   }
 }
