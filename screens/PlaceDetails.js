@@ -17,16 +17,20 @@ function PlaceDetails({route, navigation}){
     const selectedPlaceId = route.params.placeId;
 
     useEffect(() => {
-        async function loadPlaceData() {
-           const place = await fetchPlacesDetails(selectedPlaceId);
-           setFetchedPlace(place);
-           navigation.setOptions({
-               title: place.title,
-           });
-        }
-        // use selectedPlaceId  to fetch data for a single place
-        loadPlaceData();
-    }, [selectedPlaceId]);
+  async function loadPlaceData() {
+    try {
+      const place = await fetchPlacesDetails(selectedPlaceId);
+      setFetchedPlace(place);
+      navigation.setOptions({
+        title: place.title,
+      });
+    } catch (error) {
+      console.log("Error loading place details:", error);
+    }
+  }
+
+  loadPlaceData();
+}, [selectedPlaceId, navigation]);
 
     if (!fetchedPlace) {
         return(
