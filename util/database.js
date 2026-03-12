@@ -37,7 +37,8 @@ export function init() {
           imageUri TEXT NOT NULL,
           address TEXT NOT NULL,
           lat REAL NOT NULL,
-          lng REAL NOT NULL
+          lng REAL NOT NULL,
+          type TEXT NOT NULL
         )`,
         [],
         () => {
@@ -59,20 +60,15 @@ export function init() {
             const promise = new Promise((resolve, reject) => {
               database.transaction((tx) => {
                 tx.executeSql(
-                  `INSERT INTO places (title, imageUri, address, lat, lng) VALUES (?, ?, ?, ?, ?)`,
+                  `INSERT INTO places (title, imageUri, address, lat, lng, type) VALUES (?, ?, ?, ?, ?, ?)`,
                   [
                     place.title,
                     place.imageUri,
                     place.address,
                     place.location.lat,
                     place.location.lng,
-                  ],
-                  (_, result) => {
-                    resolve(result);
-                  },
-                  (_, error) => {
-                    reject(error);
-                  }
+                    place.type,
+                  ]
                 );
               });
             });

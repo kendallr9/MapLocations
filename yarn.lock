@@ -3257,6 +3257,11 @@ expo-asset@~8.6.1:
     path-browserify "^1.0.0"
     url-parse "^1.5.9"
 
+expo-bluetooth@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/expo-bluetooth/-/expo-bluetooth-0.0.0.tgz#0c298eabf7b4e6e44ac80c4f24c323368efd5a29"
+  integrity sha512-6OqEmPJ6yHkV6lLrkXHesE8DtzoHy5hW51LJ+PRju5ZivjUN9sHOSCnRLGf2+DQ8ozyyVyjTGPd/+04rASWyHA==
+
 expo-constants@~13.2.2, expo-constants@~13.2.4:
   version "13.2.4"
   resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-13.2.4.tgz#eab4a553f074b2c60ad7a158d3b82e3484a94606"
